@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .manager{
+            background-color: #dddddd;
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            color: white;
+        }
+        .user-manager{
+            position: absolute;
+            width: 200px;
+            top: 40px;
+            left: 0;
+            bottom: 0;
+            background-color: brown;
+        }
+        body{
+            margin: 0;
+        }
+        .menu{
+            display: block;
+            padding: 5px;
+        }
+        .content{
+            position: absolute;
+            left: 200px;
+            right: 0;
+            bottom: 0;
+            top: 40px;
+            background-color: antiquewhite;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="manager">用户管理后台系统</div>
+    <div class="user-manager">
+        <a class="menu" href="/user_info">用户管理</a>
+        <a class="menu" href="/user_group">用户组管理</a>
+    </div>
+    <div class="content">
+
+    </div>
+</body>
+</html>
