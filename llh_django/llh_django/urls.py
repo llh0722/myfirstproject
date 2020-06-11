@@ -22,6 +22,10 @@ urlpatterns = [
     url(r'login', views.login),
     url(r'index', views.index),
     url(r'logout/$', views.logout),
+    # 缓存
+    url(r'cache/$', views.cache),
+    # 信号
+    url(r'signal/$', views.signal),
     # url(r'detail-(?P<nid>\d+).html', views.detail),
 ]
 

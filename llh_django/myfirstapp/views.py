@@ -1,7 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.views.decorators.cache import cache_page
+
 from myfirstapp import models
+import time
 # Create your views here.
 
 error_msg = ''
@@ -37,3 +40,33 @@ def logout(request):
     return redirect("/login/")
 
 
+# 页面缓存
+'''
+@cache_page(10)
+def cache(request):
+    ctime = time.ctime()
+    return render(request, "cache.html", {"ctime": ctime})
+'''
+
+# 局部缓存
+
+def cache(request):
+    ctime = time.ctime()
+    return render(request, "cache.html", {"ctime": ctime})
+
+# 全栈缓存  启用中间件
+
+
+# 信号
+def signal(request):
+    obj = models.User(user="root")
+    print("xxx")
+    obj.save()
+
+    obj = models.User(user="root")
+    obj.save()
+
+    obj = models.User(user="root")
+    obj.save()
+
+    return HttpResponse("ok")

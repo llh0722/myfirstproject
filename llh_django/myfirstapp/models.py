@@ -29,3 +29,6 @@ class UserInfo(models.Model):
         (3, "普通用户"),
     )
     user_type_id = models.IntegerField(choices=user_type_choices, default=1)
+
+class User(models.Model):
+    user = models.CharField(max_length=32)
