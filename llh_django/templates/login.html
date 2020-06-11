@@ -17,6 +17,7 @@
 </head>
 <body>
     <form action="/login" method="post">
+        <p>{% csrf_token %}</p>
         <p>
             <label for="username">用户名：</label>
             <input type="text" name="username" placeholder="请输入用户名">
@@ -29,8 +30,29 @@
         <p class="bu">
             <input type="checkbox" name="rmb" value="1"> 免登陆10秒钟
             <input type="submit" value="提交">
+            <input id="btn" type="submit" value="按钮">
         </p>
     </form>
     <script src="/static/jquery.js"></script>
+    <script src="/static/jquery.cookie.js"></script>
+    <script>
+        $(function () {
+            $.ajaxSetup({
+                beforeSend:function (xhr, settings) {
+                    xhr.setRequestHeader("X-CSRFtoken", $.cookie("csrftoken"))
+                }
+            });
+            $("#btn").click(function () {
+                $.ajax({
+                    url: "/login",
+                    type: "GET",
+                    data: {"username": "alex", "password":"123"},
+                    success:function (arg) {
+                        
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
