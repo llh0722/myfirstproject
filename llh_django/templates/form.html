@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form验证</title>
+    <style>
+        label{
+            width: 80px;
+            text-align: right;
+            display: inline-block;
+        }
+        .bu{
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/fm/" method="POST">
+        <p>{% csrf_token %}</p>
+        <p>
+            <label for="username">用户名：</label>
+            <input type="text" name="username" placeholder="请输入用户名">
+        </p>
+        <p>
+            <label for="password">密码：</label>
+            <input type="password" name="password" placeholder="请输入密码">
+            <!--<span style="color: red">{{ error.msg }}</span>-->
+        </p>
+        <p>
+            <label for="email">邮箱：</label>
+            <input type="text" name="email" placeholder="请输入邮箱">
+        </p>
+        <p class="bu">
+            <input type="submit" value="提交">
+        </p>
+    </form>
+</body>
+</html>

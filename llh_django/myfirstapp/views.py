@@ -2,12 +2,14 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.views.decorators.cache import cache_page
-
+from django import forms
+from django.forms import fields
+from django.forms import widgets
 from myfirstapp import models
 import time
 # Create your views here.
 
-error_msg = ''
+# error_msg = ''
 def login(request):
     if request.method == 'GET':
         return render(request, 'login.html')
@@ -60,8 +62,8 @@ def cache(request):
 # 信号
 def signal(request):
     obj = models.User(user="root")
-    print("xxx")
     obj.save()
+    print("xxx")
 
     obj = models.User(user="root")
     obj.save()
@@ -70,3 +72,29 @@ def signal(request):
     obj.save()
 
     return HttpResponse("ok")
+
+
+# form验证
+class FM(forms.Form):
+    username=forms.CharField()
+    password=forms.CharField()
+    email=forms.EmailField()
+
+def fm(request):
+    if request.method == 'GET':
+        return render(request, "form.html")
+    elif request.method == 'POST':
+        # 获取用户所有数据
+        # 每条数据请求验证
+        # 成功：获取所有正确信息
+        # 失败：返回错误信息
+        obj = FM(request.POST)
+        res = obj.is_valid()
+        print(res)
+        if res:
+           print(obj.cleaned_data)
+        else:
+           print(obj.errors)
+        return redirect("/fm")
+    else:
+        return render(request, "form.html")

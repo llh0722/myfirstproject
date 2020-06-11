@@ -26,6 +26,10 @@ urlpatterns = [
     url(r'cache/$', views.cache),
     # 信号
     url(r'signal/$', views.signal),
+
+    # form验证
+    url(r'fm/$', views.fm),
+
     # url(r'detail-(?P<nid>\d+).html', views.detail),
 ]
 
