@@ -76,13 +76,29 @@ def signal(request):
 
 # form验证
 class FM(forms.Form):
-    username=forms.CharField()
-    password=forms.CharField()
-    email=forms.EmailField()
+    username=fields.CharField(error_messages={"required":"用户名不能为空！"},
+                              label="用户名",
+                              )
+    password=fields.CharField(max_length=12,
+                             min_length=6,
+                              label="密码",
+                             error_messages=
+                             {"required":"密码不能为空！",
+                              "max_length":12,
+                              "min_length":6
+                              })
+    email=fields.EmailField(error_messages=
+                           {
+                            "required":"邮箱不能为空！",
+                            "invalid":"邮箱格式错误！"
+                           },
+                            label="邮箱",
+                            )
 
 def fm(request):
     if request.method == 'GET':
-        return render(request, "form.html")
+        obj = FM()
+        return render(request, "form.html", {"obj": obj})
     elif request.method == 'POST':
         # 获取用户所有数据
         # 每条数据请求验证
@@ -90,11 +106,12 @@ def fm(request):
         # 失败：返回错误信息
         obj = FM(request.POST)
         res = obj.is_valid()
-        print(res)
         if res:
-           print(obj.cleaned_data)
+           # print(obj.cleaned_data)
+            models.User.objects.create(**obj.cleaned_data)
         else:
-           print(obj.errors)
+           # print(obj.errors)
+           return render(request, "form.html", {"obj": obj})
         return redirect("/fm")
     else:
         return render(request, "form.html")

@@ -18,17 +18,26 @@
     <form action="/fm/" method="POST">
         <p>{% csrf_token %}</p>
         <p>
-            <label for="username">用户名：</label>
-            <input type="text" name="username" placeholder="请输入用户名">
+{#            <label for="username">用户名：</label>#}
+{#            <input type="text" name="username" placeholder="请输入用户名">#}
+            {{ obj.username.label }}
+            {{ obj.username }}
+            {{ obj.errors.username.0 }}
         </p>
         <p>
-            <label for="password">密码：</label>
-            <input type="password" name="password" placeholder="请输入密码">
+{#            <label for="password">密码：</label>#}
+{#            <input type="password" name="password" placeholder="请输入密码">#}
             <!--<span style="color: red">{{ error.msg }}</span>-->
+            {{ obj.password.label }}
+            {{ obj.password }}
+            {{ obj.errors.password.0 }}
         </p>
         <p>
-            <label for="email">邮箱：</label>
-            <input type="text" name="email" placeholder="请输入邮箱">
+{#            <label for="email">邮箱：</label>#}
+{#            <input type="text" name="email" placeholder="请输入邮箱">#}
+            {{ obj.email.label }}
+            {{ obj.email }}
+            {{ obj.errors.email.0 }}
         </p>
         <p class="bu">
             <input type="submit" value="提交">
