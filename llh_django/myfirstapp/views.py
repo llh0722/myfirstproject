@@ -115,3 +115,8 @@ def fm(request):
         return redirect("/fm")
     else:
         return render(request, "form.html")
+
+
+# ModelForm验证
+def userIndex(request):
+    pass

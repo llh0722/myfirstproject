@@ -32,3 +32,12 @@ class UserInfo(models.Model):
 
 class User(models.Model):
     user = models.CharField(max_length=32)
+
+class UserType(models.Model):
+    caption = models.CharField(max_length=32)
+
+class UsersInfo(models.Model):
+    username = models.CharField(max_length=32)
+    password = models.CharField(max_length=32)
+    email = models.EmailField()
+    user_type = models.ForeignKey(to_field="id", to="UserType", on_delete=models.CASCADE)
