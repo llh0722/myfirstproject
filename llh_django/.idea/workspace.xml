@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a32f457-58d9-4fca-a2fb-25c95ce32147" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/modelForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llh_django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/llh_django/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myfirstapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myfirstapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myfirstapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myfirstapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,63 +40,33 @@
     <option name="myUseModuleSdk" value="true" />
     <option name="myModuleName" value="llh_django" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1256899212">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="2" />
-          <entry key="py" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="2" />
-          <entry key="Python" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="140" />
-          <entry key="py" value="767" />
-          <entry key="txt" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="140" />
-          <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="767" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.18" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myfirstapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="94" column="39" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
+            <state relative-caret-position="279">
+              <caret line="161" column="30" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
               <folding>
-                <marker date="1592019499247" expanded="true" signature="1848:2618" ph="..." />
+                <element signature="e#364#1089#0" />
+                <element signature="e#1115#1236#0" />
+                <element signature="e#1268#1322#0" />
+                <element signature="e#1332#1459#1" />
+                <element signature="e#1493#1572#0" />
+                <element signature="e#1574#1587#0" />
+                <element signature="e#1620#1815#0" />
+                <element signature="e#1853#2616#0" />
+                <element signature="e#2639#3221#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/llh_django/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+            <state relative-caret-position="379">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#634#666#0" expanded="true" />
               </folding>
@@ -104,11 +77,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myfirstapp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-              <folding>
-                <marker date="1592125985591" expanded="true" signature="1216:1433" ph="..." />
-              </folding>
+            <state relative-caret-position="336">
+              <caret line="43" column="12" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/modelForm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -144,18 +123,13 @@
         <option value="$PROJECT_DIR$/templates/cache.html" />
         <option value="$PROJECT_DIR$/sg.py" />
         <option value="$PROJECT_DIR$/llh_django/__init__.py" />
-        <option value="$PROJECT_DIR$/myfirstapp/views.py" />
         <option value="$PROJECT_DIR$/templates/form.html" />
         <option value="$PROJECT_DIR$/myfirstapp/models.py" />
         <option value="$PROJECT_DIR$/llh_django/urls.py" />
+        <option value="$PROJECT_DIR$/templates/modelForm.html" />
+        <option value="$PROJECT_DIR$/myfirstapp/views.py" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
@@ -169,6 +143,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,11 +161,15 @@
               <item name="llh_django" type="462c0819:PsiDirectoryNode" />
               <item name="myfirstapp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="llh_django" type="b2602c69:ProjectViewProjectNode" />
+              <item name="llh_django" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,7 +212,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Django server.llh_django">
-    <configuration name="Test: myfirstapp" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
+    <configuration name="Test: myfirstapp" type="DjangoTestsConfigurationType" temporary="true">
       <module name="llh_django" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -303,6 +282,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="llh_django.settings" />
       </envs>
       <option name="SDK_HOME" value="D:\project\PycharmProjects\llh_django\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -348,6 +328,7 @@
       <workItem from="1590979825104" duration="34999000" />
       <workItem from="1591780195429" duration="1629000" />
       <workItem from="1591845890906" duration="12866000" />
+      <workItem from="1592203502395" duration="6927000" />
     </task>
     <task id="LOCAL-00001" summary="session之登录，注销，超时">
       <created>1591858170020</created>
@@ -389,18 +370,18 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61833000" />
+    <option name="totallyTimeSpent" value="68760000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49861497" visible="true" weight="0.20347957" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49861497" visible="true" weight="0.2065053" />
       <window_info id="Structure" order="1" sideWeight="0.50138503" side_tool="true" weight="0.18835099" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36824876" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.9" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -409,7 +390,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295082" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.61865795" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32786885" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.5566502" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.55573773" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.40327868" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -447,9 +428,20 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="session之登录，注销，超时" />
@@ -493,13 +485,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/logout.html" />
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/jquery.cookie.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -546,32 +531,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myfirstapp/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding>
-            <marker date="1592125985591" expanded="true" signature="1216:1433" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myfirstapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="94" column="39" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
-          <folding>
-            <marker date="1592019499247" expanded="true" signature="1848:2618" ph="..." />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/llh_django/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+        <state relative-caret-position="379">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#634#666#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myfirstapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="43" column="12" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modelForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myfirstapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="161" column="30" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
+          <folding>
+            <element signature="e#364#1089#0" />
+            <element signature="e#1115#1236#0" />
+            <element signature="e#1268#1322#0" />
+            <element signature="e#1332#1459#1" />
+            <element signature="e#1493#1572#0" />
+            <element signature="e#1574#1587#0" />
+            <element signature="e#1620#1815#0" />
+            <element signature="e#1853#2616#0" />
+            <element signature="e#2639#3221#0" />
           </folding>
         </state>
       </provider>

@@ -7,6 +7,8 @@ from django.forms import fields
 from django.forms import widgets
 from myfirstapp import models
 import time
+
+
 # Create your views here.
 
 # error_msg = ''
@@ -30,11 +32,13 @@ def login(request):
     else:
         return redirect('index.html')
 
+
 def index(request):
     if request.session["username"]:
         return render(request, 'index.html')
     else:
         return HttpResponse("!!!")
+
 
 # 注销
 def logout(request):
@@ -50,11 +54,13 @@ def cache(request):
     return render(request, "cache.html", {"ctime": ctime})
 '''
 
+
 # 局部缓存
 
 def cache(request):
     ctime = time.ctime()
     return render(request, "cache.html", {"ctime": ctime})
+
 
 # 全栈缓存  启用中间件
 
@@ -76,24 +82,25 @@ def signal(request):
 
 # form验证
 class FM(forms.Form):
-    username=fields.CharField(error_messages={"required":"用户名不能为空！"},
-                              label="用户名",
-                              )
-    password=fields.CharField(max_length=12,
-                             min_length=6,
-                              label="密码",
-                             error_messages=
-                             {"required":"密码不能为空！",
-                              "max_length":12,
-                              "min_length":6
-                              })
-    email=fields.EmailField(error_messages=
-                           {
-                            "required":"邮箱不能为空！",
-                            "invalid":"邮箱格式错误！"
-                           },
-                            label="邮箱",
-                            )
+    username = fields.CharField(error_messages={"required": "用户名不能为空！"},
+                                label="用户名",
+                                )
+    password = fields.CharField(max_length=12,
+                                min_length=6,
+                                label="密码",
+                                error_messages=
+                                {"required": "密码不能为空！",
+                                 "max_length": 12,
+                                 "min_length": 6
+                                 })
+    email = fields.EmailField(error_messages=
+    {
+        "required": "邮箱不能为空！",
+        "invalid": "邮箱格式错误！"
+    },
+        label="邮箱",
+    )
+
 
 def fm(request):
     if request.method == 'GET':
@@ -107,16 +114,51 @@ def fm(request):
         obj = FM(request.POST)
         res = obj.is_valid()
         if res:
-           # print(obj.cleaned_data)
+            # print(obj.cleaned_data)
             models.User.objects.create(**obj.cleaned_data)
         else:
-           # print(obj.errors)
-           return render(request, "form.html", {"obj": obj})
+            # print(obj.errors)
+            return render(request, "form.html", {"obj": obj})
         return redirect("/fm")
     else:
         return render(request, "form.html")
 
 
+class FormTestModelForm(forms.ModelForm):
+    class Meta:
+        model = models.UsersIndex
+        fields = "__all__"
+
+
+class FormTest(forms.Form):
+    username = fields.CharField(error_messages={"required": "用户名不能为空!"},
+                                label="用户名",
+                                )
+    password = fields.CharField(error_messages={"required": "密码不能为空!"},
+                                label="密码"
+                                )
+    email = fields.EmailField(error_messages={"required": "邮箱不能为空!",
+                                              "invalid": "邮箱格式错误！"},
+                              label="邮箱"
+                              )
+    user_type = fields.ChoiceField(
+        choices=models.UserType.objects.values_list("id", "caption")
+    )
+
+    def __init__(self, *args, **kwargs):
+        # 自动更新
+        super(FormTest, self).__init__(*args, **kwargs)
+        self.fields["user_type"].choices = models.UserType.objects.values_list("id", "caption")
+
+
 # ModelForm验证
 def userIndex(request):
-    pass
+    if request.method == "GET":
+        obj = FormTestModelForm()
+        return render(request, "modelForm.html", {"obj": obj})
+    elif request.method == "POST":
+        obj = FormTestModelForm(request.POST)
+        print(obj.is_valid())
+        print(obj.cleaned_data)
+        print(obj.errors)
+        return render(request, "modelForm.html", {"obj": obj})

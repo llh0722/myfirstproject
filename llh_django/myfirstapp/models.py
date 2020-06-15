@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 # python manage.py makemigrations  将类转换成数据表结构
 # python manage.py  migrate  根据上一句代码生成数据表
@@ -30,14 +31,17 @@ class UserInfo(models.Model):
     )
     user_type_id = models.IntegerField(choices=user_type_choices, default=1)
 
-class User(models.Model):
-    user = models.CharField(max_length=32)
+
+# class Users(models.Model):
+#     user = models.CharField(max_length=32)
+
 
 class UserType(models.Model):
     caption = models.CharField(max_length=32)
 
-class UsersInfo(models.Model):
+
+class UsersIndex(models.Model):
     username = models.CharField(max_length=32)
     password = models.CharField(max_length=32)
     email = models.EmailField()
-    user_type = models.ForeignKey(to_field="id", to="UserType", on_delete=models.CASCADE)
+    user_type = models.ForeignKey(to="UserType", to_field="id", on_delete=models.CASCADE)
