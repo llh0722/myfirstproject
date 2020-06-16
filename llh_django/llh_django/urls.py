@@ -37,6 +37,7 @@ urlpatterns = [
 
     # ajax
     url(r'ajax/$', views.ajax),
+    url(r'ajax_json/$', views.ajax_json),
 
     # url(r'detail-(?P<nid>\d+).html', views.detail),
 ]

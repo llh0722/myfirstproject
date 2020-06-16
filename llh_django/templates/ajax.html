@@ -5,10 +5,32 @@
     <title>Title</title>
 </head>
 <body>
-    <input type="button" value="ajax" onclick="ajax_test();">
+    <input type="button" value="Ajax1" onclick="Ajax1();">
     <script>
-        function ajax_test() {
-            
+        {#兼容#}
+        function getXHR() {
+            var xhr = null;
+            if(XMLHttpRequest){
+                xhr = new XMLHttpRequest();
+            }else {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            return xhr
+        }
+        function Ajax1() {
+            {#悄悄的发送#}
+            var xhr = getXHR();
+            xhr.open("post", "/ajax_json/", true);
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    {#接收完毕#}
+                    var obj = JSON.parse(xhr.responseText);
+                    console.log(obj);
+                }
+            };
+            xhr.setRequestHeader("k1", "v1");
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset-UTF-8');
+            xhr.send("name=llh; pwd=123");
         }
     </script>
 </body>

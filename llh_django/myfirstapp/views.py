@@ -7,6 +7,7 @@ from django.forms import fields
 from django.forms import widgets
 from myfirstapp import models
 import time
+import json
 
 
 # Create your views here.
@@ -194,3 +195,9 @@ def userEdit(request, nid):
 
 def ajax(request):
     return render(request, "ajax.html")
+
+def ajax_json(request):
+    print(request.POST)
+    ret = {"status": True, "data": None}
+    # return HttpResponse(json.dumps(ret), status=404, reason="Not fund")
+    return HttpResponse(json.dumps(ret))
