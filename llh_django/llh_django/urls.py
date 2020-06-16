@@ -35,6 +35,9 @@ urlpatterns = [
     url(r'userList/$', views.userList),
     url(r'userEdit-(\d+)/$', views.userEdit),
 
+    # ajax
+    url(r'ajax/$', views.ajax),
+
     # url(r'detail-(?P<nid>\d+).html', views.detail),
 ]
 

@@ -190,3 +190,7 @@ def userEdit(request, nid):
         if mf.is_valid():
             mf.save()
         return render(request, "userEdit.html", {"mf": mf, "nid": nid})
+
+
+def ajax(request):
+    return render(request, "ajax.html")
