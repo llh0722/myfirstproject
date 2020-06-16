@@ -5,11 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/userIndex/" method="post">
+    <form action="/userEdit-{{ nid }}/" method="post">
         {% csrf_token %}
-        {{ obj.as_p }}
+        {{ mf.as_p }}
         <input type="submit" value="提交">
     </form>
-    <p><a href="/userList">查看详情</a></p>
 </body>
 </html>

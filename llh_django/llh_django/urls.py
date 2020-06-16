@@ -32,6 +32,8 @@ urlpatterns = [
 
     # ModelForm验证
     url(r'userIndex/$', views.userIndex),
+    url(r'userList/$', views.userList),
+    url(r'userEdit-(\d+)/$', views.userEdit),
 
     # url(r'detail-(?P<nid>\d+).html', views.detail),
 ]

@@ -127,7 +127,15 @@ def fm(request):
 class FormTestModelForm(forms.ModelForm):
     class Meta:
         model = models.UsersIndex
-        fields = "__all__"
+        fields = "__all__"    # 全部字段
+        # fields = ["username", "password", ....]  罗列字段
+        # exclude = "username"  排除
+        labels = {
+            "username": "用户名",
+            "password": "密码",
+            "email": "邮箱",
+            "user_type": "部门",
+        }
 
 
 class FormTest(forms.Form):
@@ -158,7 +166,27 @@ def userIndex(request):
         return render(request, "modelForm.html", {"obj": obj})
     elif request.method == "POST":
         obj = FormTestModelForm(request.POST)
-        print(obj.is_valid())
-        print(obj.cleaned_data)
-        print(obj.errors)
+        if obj.is_valid():
+            obj.save()
+        # print(obj.is_valid())
+        # print(obj.cleaned_data)
+        # print(obj.errors)
         return render(request, "modelForm.html", {"obj": obj})
+
+
+def userList(request):
+    li = models.UsersIndex.objects.all().select_related("user_type")
+    return render(request, "userList.html", {"li": li})
+
+
+def userEdit(request, nid):
+    if request.method == "GET":
+        user_obj = models.UsersIndex.objects.filter(id=nid).first()
+        mf = FormTestModelForm(instance=user_obj)
+        return render(request, "userEdit.html", {"mf": mf, "nid": nid})
+    elif request.method == "POST":
+        user_obj = models.UsersIndex.objects.filter(id=nid).first()
+        mf = FormTestModelForm(request.POST, instance=user_obj)
+        if mf.is_valid():
+            mf.save()
+        return render(request, "userEdit.html", {"mf": mf, "nid": nid})
