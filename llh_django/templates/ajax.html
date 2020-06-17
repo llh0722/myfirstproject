@@ -6,6 +6,13 @@
 </head>
 <body>
     <input type="button" value="Ajax1" onclick="Ajax1();">
+    {# 伪ajax操作#}
+    <form action="/ajax_json/" method="post" target="ifr">
+        <iframe id="ifr" name="ifr"></iframe>
+        <input type="text" name="username">
+        <input type="submit" value="Ajax提交" onclick="subIfr();">
+    </form>
+    <script src="/static/jquery.js"></script>
     <script>
         {#兼容#}
         function getXHR() {
@@ -31,6 +38,13 @@
             xhr.setRequestHeader("k1", "v1");
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset-UTF-8');
             xhr.send("name=llh; pwd=123");
+        }
+
+        function subIfr() {
+            $("#ifr").load(function () {
+                var text = $("#ifr").contents().find("body").text()
+                var obj = JSON.parse(text)
+            });
         }
     </script>
 </body>

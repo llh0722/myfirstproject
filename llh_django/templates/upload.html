@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .upload{
+            position: absolute;
+            width: 80px;height: 40px;
+            top: 0;right: 0;left: 0;bottom: 0;
+            z-index: 10;
+            opacity: 0;
+        }
+        .sub{
+            display: inline-block;padding: 10px;
+            background-color: red;
+            top: 0;right: 0;left: 0;bottom: 0;
+            z-index: 9;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: relative; width: 80px; height: 40px;">
+        <input class="upload" type="file" id="up" name="up">
+        <a class="sub">提交</a>
+    </div>
+    <input type="button" value="xhr提交" onclick="xhrSub();">
+    <input type="button" value="jquery提交" onclick="jqSub();">
+
+    <hr>
+
+    <div>
+        <form id="form1" action="/upload_file/" method="post" enctype="multipart/form-data" target="form1">
+            <iframe id="ifr" name="ifr" style="display: none"></iframe>
+            <input type="file" id="up" name="up" onchange="changeLoad();">
+{#            <input type="submit" value="iframe提交" onclick="iframeSub();">#}
+        </form>
+    </div>
+    {#    预览#}
+    <div id="preview"></div>
+
+    <script src="/static/jquery.js"></script>
+    <script>
+        function changeLoad() {
+            $("#ifr").load(function () {
+                var text = $("#ifr").contents().find("body").text();
+                var obj = JSON.parse(text);
+                $('#preview').empty();
+                var imgTag = document.createElement('img');
+                imgTag.src = '/' + obj.data;
+                $('#preview').append(imgTag);
+            });
+            $('#form1').submit();
+        }
+
+        function jqSub() {
+            var file_obj = document.getElementById("up").files[0];
+            var fo = new FormData()
+            fo.append("username", "alex");
+            fo.append("up", file_obj);
+            $.ajax({
+                url: "/upload_file/",
+                type: "post",
+                data: fo,
+                processData: false,
+                contentType: false,
+                success:function (args1,a1,a2) {
+                    console.log(args1);
+                    console.log(a1);
+                    console.log(a2);
+                }
+            });
+        }
+
+        function xhrSub() {
+            var file_obj = document.getElementById("up").files[0];
+            var fo = new FormData()
+            fo.append("username", "alex");
+            fo.append("up", file_obj);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/upload_file/", true)
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4){
+                    var obj = JSON.parse(xhr.responseText)
+                    console.log(obj)
+                }
+            }
+            xhr.send(fo)
+        }
+
+        function iframeSub() {
+            $("#ifr").load(function () {
+                var text = $("#ifr").contents().find("body").text();
+                var obj = JSON.parse(text);
+                $('#preview').empty();
+                var imgTag = document.createElement('img');
+                imgTag.src = '/' + obj.data;
+                $('#preview').append(imgTag);
+            });
+        }
+    </script>
+</body>
+</html>

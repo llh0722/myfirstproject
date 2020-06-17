@@ -196,8 +196,28 @@ def userEdit(request, nid):
 def ajax(request):
     return render(request, "ajax.html")
 
+
 def ajax_json(request):
+    time.sleep(3)
     print(request.POST)
-    ret = {"status": True, "data": None}
+    ret = {"code": True, "data": request.POST.get("username")}
     # return HttpResponse(json.dumps(ret), status=404, reason="Not fund")
     return HttpResponse(json.dumps(ret))
+
+
+def upload(request):
+    return render(request, "upload.html")
+
+
+def upload_file(request):
+    import os
+    username = request.POST.get("username")
+    up = request.FILES.get("up")
+    img_path = os.path.join("static/imgs/", up.name)
+    print(username, up, img_path)
+    with open(img_path, "wb") as f:
+        for item in up.chunks():
+            f.write(item)
+    ret = {"code": True, "data": img_path}
+    return HttpResponse(json.dumps(ret))
+    # return render(request, "upload.html", {"ret": json.dumps(ret)})

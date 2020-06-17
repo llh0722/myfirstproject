@@ -39,6 +39,10 @@ urlpatterns = [
     url(r'ajax/$', views.ajax),
     url(r'ajax_json/$', views.ajax_json),
 
+    # 上传文件
+    url(r'upload/$', views.upload),
+    url(r'upload_file/$', views.upload_file),
+
     # url(r'detail-(?P<nid>\d+).html', views.detail),
 ]
 
