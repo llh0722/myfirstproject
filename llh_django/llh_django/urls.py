@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from myfirstapp import views
+from mysecendapp import views as v2
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
@@ -43,7 +44,15 @@ urlpatterns = [
     url(r'upload/$', views.upload),
     url(r'upload_file/$', views.upload_file),
 
+
+    # 组合搜索
+    url(r'article-(?P<category_id>\d+)-(?P<article_type_id>\d+).html/$', views.article, name='article'),
+
     # url(r'detail-(?P<nid>\d+).html', views.detail),
+
+
+    # json跨域请求
+    url(r'req/$', v2.req),
 ]
 
 

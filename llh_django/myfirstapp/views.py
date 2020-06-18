@@ -128,7 +128,7 @@ def fm(request):
 class FormTestModelForm(forms.ModelForm):
     class Meta:
         model = models.UsersIndex
-        fields = "__all__"    # 全部字段
+        fields = "__all__"  # 全部字段
         # fields = ["username", "password", ....]  罗列字段
         # exclude = "username"  排除
         labels = {
@@ -221,3 +221,32 @@ def upload_file(request):
     ret = {"code": True, "data": img_path}
     return HttpResponse(json.dumps(ret))
     # return render(request, "upload.html", {"ret": json.dumps(ret)})
+
+
+def article(requeat, **kwargs):
+    print(kwargs)
+    condition = {}
+    for k, v in kwargs.items():
+        kwargs[k] = int(v)
+        if v == '0':
+            pass
+        else:
+            condition[k] = v
+    category_list = models.Category.objects.all()
+    print(category_list)
+    article_type_list = models.ArticleType.objects.all()
+    article_list = models.Article.objects.filter(**condition)
+    return render(
+        requeat,
+        "article.html",
+        {
+            "article_list": article_list,
+            "category_list": category_list,
+            "article_type_list": article_type_list,
+            "art_dic": kwargs
+        }
+    )
+
+
+
+

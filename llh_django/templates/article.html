@@ -1,0 +1,63 @@
+{% load filter %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .condition a{
+            display: inline-block;
+            padding: 5px 5px;
+            border: 1px solid #dddddd;
+            margin: 5px;
+        }
+        .condition a.active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="condition">
+        <div>
+            {% filter_all art_dic 'category_id' %}
+            {% filter_category category_list art_dic %}
+{#            {% if art_dic.category_id == 0 %}#}
+{#                <a class="active" href="/article-0-{{ art_dic.article_type_id }}.html">全部</a>#}
+{#            {% else %}#}
+{#                <a href="/article-0-{{ art_dic.article_type_id }}.html">全部</a>#}
+{#            {% endif %}#}
+{#            {% for row in category_list %}#}
+{#                {% if row.id == art_dic.category_id %}#}
+{#                    <a class="active" href="/article-{{ row.id }}-{{ art_dic.article_type_id }}.html">{{ row.caption }}</a>#}
+{#                {% else %}#}
+{#                    <a href="/article-{{ row.id }}-{{ art_dic.article_type_id }}.html">{{ row.caption }}</a>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+        </div>
+        <div>
+            {% filter_all art_dic 'article_type_id' %}
+            {% filter_article_type article_type_list art_dic %}
+{#            {% if art_dic.article_type_id == 0 %}#}
+{#                <a class="active" href="/article-{{ art_dic.category_id }}-0.html">全部</a>#}
+{#            {% else %}#}
+{#                <a href="/article-{{ art_dic.category_id }}-0.html">全部</a>#}
+{#            {% endif %}#}
+{#            {% for row in article_type_list %}#}
+{#                {% if row.id == art_dic.article_type_id %}#}
+{#                    <a class="active" href="/article-{{ art_dic.category_id }}-{{ row.id }}.html">{{ row.caption }}</a>#}
+{#                {% else %}#}
+{#                    <a href="/article-{{ art_dic.category_id }}-{{ row.id }}.html">{{ row.caption }}</a>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+        </div>
+    </div>
+    <div>
+        <h5>全部结果</h5>
+        <ul>
+            {% for row in article_list %}
+                <li>{{ row.id }}--{{ row.title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
